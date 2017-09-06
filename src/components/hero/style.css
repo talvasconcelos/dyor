@@ -1,0 +1,35 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  height: 100%;
+  min-height: 61.8vh;
+  box-shadow: 0 6rem 8rem 0 rgba(255,182,71,0.08);
+}
+.heroImg {
+  position: absolute;
+  background-image: url('../../assets/img/dyor_hero.jpg');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(255,182,71,0.3) 100%), url('../../assets/img/dyor_hero.jpg'); /*url('https://source.unsplash.com/collection/1153100/2048x1024')*/;
+  background-size: cover;
+  background-position: top center;
+  width: 100%;
+  height: 100%;
+}
+
+.pitch {
+  position: relative;
+  height: 100%;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+.pitch h1,
+.pitch h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pitch hr {
+  margin: 0 auto;
+}

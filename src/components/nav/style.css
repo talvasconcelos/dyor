@@ -1,8 +1,11 @@
 .header {
-  /*background-color: pink;*/
   position: fixed;
-  min-width: 100%;
-  box-shadow: 10px 10px 25px rgba(0,0,0,0.03);
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 0px 32px rgba(0,0,0,0.15);
+  z-index: 999;
 }
 
 .navBar{
@@ -25,7 +28,7 @@
   top: 0;
   left: -100%;
   width: 100%;
-  max-width: 320px;
+  max-width: 66vw;
   height: 100vh;
   list-style-type: none;
   margin: 0;
@@ -62,6 +65,15 @@
 .menuToggle {display: none;}
 
 @media screen and (min-width: 40em) {
+
+  .header {
+    position: absolute;
+    margin: 0;
+  }
+
+  .navBar{
+    margin: 0 auto;
+  }
 
   .labelToggle {
     display: none;

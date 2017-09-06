@@ -1,11 +1,11 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "DYOR - Do Your Own Research",
+  "short_name": "DYOR PWA",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#fff",
-  "theme_color": "#673ab8",
+  "theme_color": "#FFB647",
   "icons": [{
     "src": "/assets/icons/android-chrome-192x192.png",
     "type": "image/png",
