@@ -69,6 +69,7 @@
   .header {
     position: absolute;
     margin: 0;
+    max-width: none;
   }
 
   .navBar{

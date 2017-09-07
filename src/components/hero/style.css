@@ -3,9 +3,10 @@
   display: flex;
   align-items: center;
   margin-top: 4rem;
-  height: 100%;
+  width: 100%;
   min-height: 61.8vh;
   box-shadow: 0 6rem 8rem 0 rgba(255,182,71,0.08);
+  overflow: hidden;
 }
 .heroImg {
   position: absolute;
@@ -13,8 +14,9 @@
   background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(255,182,71,0.3) 100%), url('../../assets/img/dyor_hero.jpg'); /*url('https://source.unsplash.com/collection/1153100/2048x1024')*/;
   background-size: cover;
   background-position: top center;
-  width: 100%;
-  height: 100%;
+  width: 105%;
+  height: 105%;
+  filter: blur(3px);
 }
 
 .pitch {
@@ -32,4 +34,10 @@
 
 .pitch hr {
   margin: 0 auto;
+}
+
+@media screen and (min-width: 40em) {
+ .wrapper, .heroImg {
+   max-width: none;
+ }
 }

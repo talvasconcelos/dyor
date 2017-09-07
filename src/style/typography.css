@@ -15,63 +15,6 @@ License URL ... https://raw.githubusercontent.com/matejlatin/Gutenberg/master/li
    ========================================================================== */
 /* Headings
    ========================================================================== */
-
-@media screen and (min-width: 40em) {
- body,
- html {
-   margin: 0;
-   width: 100%;
-   max-width: none;
- }
-}
-
-html {
- box-sizing: border-box;
- font-size: 16px;
- font-size: 100%;
- font-family: var(--font-family);
- color: #222;
- -ms-text-size-adjust: 100%;
- -webkit-text-size-adjust: 100%;
-}
-@media screen and (min-width: 40em) {
- html {
-   font-size: 18px;
-   font-size: 1.125rem;
- }
-}
-
-.container {
- line-height: 26px;
- line-height: 1.625rem;
- margin: 0px 0px 26px;
- margin: 0rem 0rem 1.625rem;
-}
-
-@media screen and (min-width: 40em) {
- .container {
-   line-height: 31px;
-   line-height: 1.722222222222222rem;
-   margin-bottom: 31px;
-   margin-bottom: 1.722222222222222rem;
-   max-width: 630px;
-   max-width: 35rem;
-   margin-left: auto;
-   margin-right: auto;
- }
-}
-
-.container,
-.container::before,
-.container::after {
- box-sizing: inherit;
-}
-
-body {
- margin: 0;
- height: 3000px;
-}
-
 h1,
 h2,
 h3,

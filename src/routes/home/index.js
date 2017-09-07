@@ -10,7 +10,7 @@ export default class Home extends Component {
 		return (
 			<div class={style.home}>
 				<Hero />
-				<section class={cx('container', style.full)}>
+				<section class={style.full}>
 					<Feature title='Feat#1'>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident debitis itaque maiores atque, qui explicabo quisquam expedita cupiditate voluptatibus accusantium.</p>
 					</Feature>
