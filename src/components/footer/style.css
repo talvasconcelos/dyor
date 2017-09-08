@@ -1,13 +1,15 @@
 .footer {
-  position: relative;
-  box-sizing: border-box;
+  position: absolute;
+  left: 0;
   bottom: 0;
-  max-width: none;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 0;
+  right: 0;
+  height: 400px;
   padding: 1em;
   background: var(--secondary-color);
   color: #fff;
-  overflow: hidden;
+}
+
+.footer hr {
+  background: var(--primary-color);
+  height: 2px;
 }

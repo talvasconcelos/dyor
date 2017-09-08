@@ -6,6 +6,7 @@ import Nav from './nav';
 import Home from '../routes/home';
 import Footer from './footer';
 import Profile from '../routes/profile';
+import Blog from '../routes/blog';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -24,6 +25,7 @@ export default class App extends Component {
 				<Nav />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
+					<Blog path="/blog/" />
 					<Profile path="/profile/" user="me" />
 					<Profile path="/profile/:user" />
 				</Router>

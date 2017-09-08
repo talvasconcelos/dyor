@@ -14,6 +14,9 @@ export default class Nav extends Component {
               <Link activeClassName={style.active} href="/">Home</Link>
             </li>
             <li>
+              <Link activeClassName={style.active} href="/blog">Blog</Link>
+            </li>
+            <li>
               <Link activeClassName={style.active} href="/profile">Me</Link>
             </li>
             <li>
