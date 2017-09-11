@@ -1,3 +1,7 @@
 .blog {
-  
+  padding-top: 4rem;
+}
+
+.blog h1 {
+  margin-top: 0;
 }

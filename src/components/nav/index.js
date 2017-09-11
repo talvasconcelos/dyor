@@ -3,6 +3,7 @@ import { Link } from 'preact-router/match';
 import style from './style';
 
 export default class Nav extends Component {
+
 	render() {
 		return (
 			<header class={style.header}>

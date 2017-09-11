@@ -5,6 +5,7 @@
   justify-content: center;
   width: 100vw;
   height: 84.375vw;
+  max-height: 90vh;
   margin-top: 4rem;
   /*min-height: 61.8vh;*/
   box-shadow: 0 6rem 8rem 0 rgba(255,182,71,0.08);
