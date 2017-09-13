@@ -23,6 +23,5 @@ export const getAllPosts = () => {
 export const getPost = (postName) => {
   return axios
     .get(`https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/${postName}`)
-    .then(response => response.data)
-    .then(console.log)
+    .then(response => response.data)    
 }

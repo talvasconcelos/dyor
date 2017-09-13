@@ -2,9 +2,10 @@ import { h, Component } from 'preact';
 import memoize from 'fast-memoize';
 import style from './style';
 
-import { getAllPosts } from '../../lib/api';
+import { getAllPosts, getPost } from '../../lib/api';
 
-import PostCard from '../../components/postCard';
+import { Blogroll } from '../../components/blog';
+import { PostSingle } from '../../components/postSingle';
 
 const URL = 'https://api.github.com/repos/talvasconcelos/dyor-posts/contents/'
 
@@ -21,9 +22,15 @@ const memoizedPosts = memoize(getAllPosts)
 
 export default class Blog extends Component {
 	state = {
-		posts: []
+		posts: [],
+		content: []
 	}
 
+	getPostURI() {
+		this.state.posts.filter(post => {
+			post.slug === props.matches.post
+		})
+	}
 
 	componentDidMount() {
 		memoizedPosts().then(posts => {
@@ -34,12 +41,26 @@ export default class Blog extends Component {
 	render({...props}, { posts, ...state }) {
 		return (
 			<main class={style.blog}>
-					<h1>blog</h1>
-					 {posts.map(post =>
-						<PostCard key={post.key} title={post.name} link={`/blog/${post.slug}`} date={post.date} />
-				)}
+				{props.matches.post ?
+					<PostSingle {...props} url={this.getPostURI()} />
+					:
+					<Blogroll posts={posts} />
+				}
 			</main>
 		);
 	}
 }
 /* <pre>{JSON.stringify(props.matches)}</pre> */
+
+/*<h1>blog</h1>
+{posts.map(post =>
+<PostCard key={post.key} title={post.name} link={`/blog/${post.slug}`} date={post.date} />
+)}*/
+
+
+
+//{props.matches.post && <Blogroll posts={posts} />}
+//<pre>{JSON.stringify(props.matches.post)}</pre>
+//{props.posts.map(post => {
+//  <PostCard key={post.key} title={post.name} link={`/blog/${post.slug}`} date={post.date} />
+//})}
