@@ -5,9 +5,9 @@ import style from './style';
 import { getAllPosts, getPost } from '../../lib/api';
 
 import { Blogroll } from '../../components/blog';
-import { PostSingle } from '../../components/postSingle';
+import PostSingle from '../../components/postSingle';
 
-const URL = 'https://api.github.com/repos/talvasconcelos/dyor-posts/contents/'
+const URL_REPO = 'https://api.github.com/repos/talvasconcelos/dyor-posts/contents/'
 
 // Extract date from post
 const DATE_REG = /\d{4}([.\-/ ])\d{2}\1\d{2}/;
@@ -18,18 +18,18 @@ const FRONT_MATTER_REG = /^\s*\-\-\-\n\s*([\s\S]*?)\s*\n\-\-\-\n/i;
 // Find a leading title in a markdown document
 const TITLE_REG = /^\s*#\s+(.+)\n+/;
 
-const memoizedPosts = memoize(getAllPosts)
+const memoizeProd = process.env.NODE_ENV === 'production' ? memoize : f=>f
+
+//const memoizedPosts = memoize(getAllPosts)
+
+const getContent = memoizeProd(getAllPosts => {
+	let pa
+})
 
 export default class Blog extends Component {
 	state = {
 		posts: [],
 		content: []
-	}
-
-	getPostURI() {
-		this.state.posts.filter(post => {
-			post.slug === props.matches.post
-		})
 	}
 
 	componentDidMount() {
@@ -42,7 +42,7 @@ export default class Blog extends Component {
 		return (
 			<main class={style.blog}>
 				{props.matches.post ?
-					<PostSingle {...props} url={this.getPostURI()} />
+					<PostSingle {...props} posts={posts} />
 					:
 					<Blogroll posts={posts} />
 				}

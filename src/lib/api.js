@@ -9,6 +9,7 @@ export const getAllPosts = () => {
       let out = res.map(post => {
         return {
           key: post.sha,
+          fileName: post.name,
           date: post.name.slice(0, 10),
           slug: post.name.slice(11).replace(/\.([a-z]+)$/i, ''),
           name: post.name.slice(11).replace(/\.([a-z]+)$/i, '').replace(/\-/g, ' '),
@@ -20,8 +21,8 @@ export const getAllPosts = () => {
     .catch(err => console.error(err))
 }
 
-export const getPost = (postName) => {
+export const getPost = (x) => {
   return axios
-    .get(`https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/${postName}`)
-    .then(response => response.data)    
+    .get(x)
+    .then(response => response.data)
 }

@@ -6,8 +6,8 @@ export const Blogroll = ({posts}) => {
   return (
     <div>
       <h1>Blog</h1>
-      {posts.map(post =>
-        <PostCard key={post.key} title={post.name} link={`/blog/${post.slug}`} date={post.date} />
+      {posts.map((post, i) =>
+        <PostCard key={post.i} title={post.name} link={`/blog/${post.slug}`} date={post.date} />
       )}
     </div>
   )
