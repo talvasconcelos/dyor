@@ -4,7 +4,7 @@ export const getAllPosts = () => {
   return axios
     .get('https://api.github.com/repos/talvasconcelos/dyor-posts/contents/')
     .then(response => response.data)
-    .then(res => {
+    /*.then(res => {
       res.pop()
       let out = res.map(post => {
         return {
@@ -17,7 +17,7 @@ export const getAllPosts = () => {
         }
       })
       return out
-    })
+    })*/
     .catch(err => console.error(err))
 }
 
