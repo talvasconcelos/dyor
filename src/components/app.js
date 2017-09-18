@@ -1,6 +1,8 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
+//import AppState from '../AppState'
+
 //import Header from './header';
 import Nav from './nav';
 import Home from '../routes/home';
@@ -20,19 +22,21 @@ export default class App extends Component {
 		this.currentUrl = e.url;
 	};
 
-	render() {
+	render({...props}, {}) {
 		return (
-			<div id="app">
-				<Nav />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Blog path="/blog/:post?" />
-					{/* <Post path="/blog/:post"/> */}
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
-				</Router>
-				<Footer />
-			</div>
+
+				<div id="app">
+					<Nav />
+					<Router onChange={this.handleRoute}>
+						<Home path="/" />
+						<Blog path="/blog/" data={props.appState} updater={props.setAppState}/>
+						<Post path="/blog/post/:post" />
+						<Profile path="/profile/" user="me" />
+						<Profile path="/profile/:user" />
+					</Router>
+					<Footer />
+				</div>
+
 		);
 	}
 }

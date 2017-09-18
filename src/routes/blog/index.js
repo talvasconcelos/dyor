@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import { Link } from 'preact-router/match';
 import memoize from 'fast-memoize'
 import yaml from 'yaml'
 import Markdown from '../../lib/markdown'
@@ -47,46 +48,50 @@ const parseContent = (text) => {
 
 export default class Blog extends Component {
 
-	state = {
-		links: [],
-		content: '',
-		meta: ''
-	}
+	// state = {
+	// 	links: [],
+	// 	content: '',
+	// 	meta: ''
+	// }
 
-	handleClick(e) {
-		//console.log(e.target.value)
-		getContent(e.target.value)
-			.then(s => {
-				this.setState({content: s.content, meta: s.meta})
-			})
-	}
+	// handleClick(e) {
+	// 	//console.log(e.target.value)
+	// 	getContent(e.target.value)
+	// 		.then(s => {
+	// 			this.setState({content: s.content, meta: s.meta})
+	// 		})
+	// }
 
 	componentDidMount() {
+		console.log(this.props.data)
 		memoize(getArticles()
 			.then(s => {
-				this.setState({links: s})
+				//this.setState({links: s})
+				this.props.updater({
+					links: s
+				})
 			}))
 	}
 
-	render({}, {links}) {
+	render({...props}, {}) {
 		return (
 			<section class={style.blog}>
 				<h1>Blog</h1>
-				{!this.state.links.length ?
+				{/* <pre>{JSON.stringify(props.data.links, 0, ' ')}</pre> */}
+				{!props.data.links ?
 					<h4>Loading...</h4> :
 					<div>
-						{links.map((post, i) =>
+						{props.data.links.map((post, i) =>
 			        <PostCard key={post.i}
 								title={post.name.slice(11).replace(/\.([a-z]+)$/i, '').replace(/\-/g, ' ')}
 								handler={this.handleClick}
 								date={post.name.slice(0, 10)}
 								url={post.download_url}
-							>
-								<button onClick={this.handleClick} value={post.download_url} >More</button>
-							</PostCard>
-
+								slug={post.name.slice(11).replace(/\.([a-z]+)$/i, '')}
+								updater={props.setAppState}
+							/>
 			      )}
-						<pre>{JSON.stringify(this.state, 0, ' ')}</pre>
+						<pre>{JSON.stringify(props.data, 0, ' ')}</pre>
 					</div>
 				}
 			</section>

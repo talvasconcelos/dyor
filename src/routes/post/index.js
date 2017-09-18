@@ -3,20 +3,24 @@ import memoize from 'fast-memoize'
 
 import { getPost } from '../../lib/api'
 
+const URI = `https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/`
+
 //const memoizedPost = memoize(getPost)
 
 export default class Post extends Component {
 
   componentDidMount() {
-    getPost('do-your-research.md')
+    //let path = `URI${rr}`
+    getPost(this.props.url)
+    //console.log(this.props.url)
   }
 
-  render({...props}, {}) {
+  render({...props}, {...state}) {
     return (
       <main>
         <h1>Single post</h1>
-        <h2>{JSON.stringify({...props})}</h2>
-        <p>{`${props.matches.post}.md`}</p>
+        <pre>{JSON.stringify({...props}, 0, ' ')}</pre>
+        <p></p>
       </main>
     )
   }

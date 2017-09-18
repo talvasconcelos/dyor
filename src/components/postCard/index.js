@@ -10,7 +10,7 @@ export const PostCard = ({children, ...props}) => {
 			<h2>{props.title}</h2>
 			<p>{moment(props.date).format('LL')}</p>
 			<p class='attention-grabber'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus corporis eaque inventore culpa ipsa consequatur, accusamus atque molestias cumque aut.</p>
-			{children}
+			<Link href={`/blog/post/${props.slug}`}>Back</Link>
 		</article>
 	);
 }
