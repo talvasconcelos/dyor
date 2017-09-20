@@ -45,21 +45,29 @@ export default class PostSingle extends Component {
     meta: ''
   }
 
-  content() {
-    //alert(this.props.url[0])
-    //getContent(this.props.url.raw_url).then(r => this.setState(r))
-  }
+  fetchContent = (posts) => {
+		let post = posts.filter(post => post.slug === this.props.slug)
+		return fetch(post[0].raw_url)
+			.then(r => r.text())
+			.then(text => parseContent(text))
+			.then(r => this.setState(r))
+	}
 
-  componentDidMount() {
+  async componentDidMount() {
+
+		this.fetchContent(await this.props.posts)
     //this.content()
     // getPost(this.props.data.raw_url)
     //   .then(r => parseContent(r))
     //   .then(r => this.setState(r))
   }
 
-  render({url, ...props}, {content, meta}) {
+  render({...props}, {content, meta}) {
     return (
-      <pre>{JSON.stringify({url.raw_url, content}, 0, '  ')}</pre>
+			<div>
+				<pre>{JSON.stringify({props}, 0, '  ')}</pre>
+				{content && <Markdown markdown={content} {...props} />}
+			</div>
     )
   }
 }

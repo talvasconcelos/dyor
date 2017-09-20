@@ -6,7 +6,8 @@ class AppState extends Component {
     super(props)
 
     this.state = {
-      posts: []
+      posts: [],
+      activePost: ''
     }
 
     this.setAppState = this.setAppState.bind(this);
