@@ -58,12 +58,12 @@ export default class Post extends Component {
 
   render({...props}, {content, meta, ...state}) {
     return (
-			<div class='container'>
+			<div class='container article'>
 				{content &&
           <div>
 						<h2>{meta.title}</h2>
 						<hr/>
-            <Markdown markdown={content} {...props} />
+						<Markdown markdown={content} {...props} />
           </div>
         }
 			</div>

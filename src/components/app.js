@@ -52,8 +52,6 @@ export default class App extends Component {
 					<Home path="/" />
 					<Blog path="/blog/:post?" data={props.appState} up={props.setAppState} />
 					<Post path="/blog/:post" active={props.activePost} />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
 				</Router>
 				<Footer />
 			</div>

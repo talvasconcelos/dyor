@@ -1,1 +1,26 @@
+.feature {
+  width: 100%;
+  text-align: center;
+}
 
+.feature h2 {
+
+}
+
+.icon {
+  height: 4em;
+  width: auto;
+}
+
+
+@media screen and (min-width: 40em) {
+  .feature {
+    padding: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 4em;
+  }
+
+  .feature:last-child {
+    margin-right: 0;
+  }
+}

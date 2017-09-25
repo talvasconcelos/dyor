@@ -14,7 +14,7 @@ export default class Hero extends Component {
 						</h2>
 					</hgroup>
 					<hr/>
-					<p class='alignCenter'>Condensed, resumed, opinionated cryptocurrency&nbsp;research!</p>
+					<p class='alignCenter'>Condensed, resumed and neutral cryptocurrency&nbsp;research!</p>
 				</div>
 			</section>
 		)

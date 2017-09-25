@@ -11,4 +11,8 @@
   --line-height: 1.625rem;
   --font-color: #222;
   --font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  /*
+    layout
+  */
+  --footer-height: 500px;
 }

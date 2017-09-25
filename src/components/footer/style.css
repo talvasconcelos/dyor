@@ -1,12 +1,19 @@
 .footer {
+  display: block;
   position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
-  height: 400px;
+  height: var(--footer-height);
   padding: 1em;
   background: var(--secondary-color);
   color: #fff;
+  font-size: 0.75rem;
+}
+
+.content {
+  max-width: 85%;
+  margin: 0 auto;
 }
 
 .footer hr {

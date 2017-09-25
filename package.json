@@ -17,7 +17,6 @@
     "extends": "eslint-config-synacor"
   },
   "devDependencies": {
-    "classnames": "^2.2.5",
     "eslint": "^4.7.2",
     "eslint-config-synacor": "^1.1.1",
     "eslint-plugin-react": "^7.3.0",
