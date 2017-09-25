@@ -1,6 +1,6 @@
-import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
-import style from './style';
+import { h, Component } from 'preact'
+import { Link } from 'preact-router/match'
+import style from './style'
 
 export default class Footer extends Component {
 	render() {
@@ -16,9 +16,9 @@ export default class Footer extends Component {
 						<span>ETH:&nbsp;</span>
 						<small>1BvBMSEYstWetqTFn5Au4m4GFg7JaNVN2</small>
 					</p>
-					</div>
+				</div>
 				<hr/>
 			</footer>
-		);
+		)
 	}
 }

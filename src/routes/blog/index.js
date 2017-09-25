@@ -6,14 +6,14 @@ import { PostCard } from '../../components/postCard'
 
 export default class Blog extends Component {
 	constructor(props) {
-    super(props);
-    this.updateActive = this.updateActive.bind(this);
-  }
+		super(props)
+		this.updateActive = this.updateActive.bind(this)
+	}
 
 
 	updateActive(url) {
 		this.props.up({
-			activePost: `https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/${url}.md`
+			activePost: `//rawgit.com/talvasconcelos/dyor-posts/master/${url}.md`
 		})
 	}
 
@@ -32,15 +32,14 @@ export default class Blog extends Component {
 
 	render({...props}, {}) {
 		return (
-			<section class={style.blog}>
+			<section class={`container ${style.blog}`}>
 				{props.data.posts.map((post) =>
 	        <PostCard key={post.id}
 						title={post.slug.replace(/\-/g, ' ')}
 						date={post.date}>
 						<Link href={`/blog/${post.filename}`} onClick={() => this.updateActive(post.filename)}>More</Link>
 					</PostCard>
-					)}
-				<pre>{JSON.stringify({props}, 0, ' ')}</pre>
+				)}
 			</section>
 		)
 	}

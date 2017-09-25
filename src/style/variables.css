@@ -1,6 +1,14 @@
 :root {
+  /*
+    colors
+  */
   --primary-color: #FFB647;
   --secondary-color: #222;
+  /*
+    typography
+  */
+  --font-size: 16px;
+  --line-height: 1.625rem;
   --font-color: #222;
   --font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
 }

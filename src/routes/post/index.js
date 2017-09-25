@@ -1,10 +1,9 @@
-import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
-import Markdown from '../../lib/markdown';
-import moment from 'moment';
+import { h, Component } from 'preact'
+import { Link } from 'preact-router/match'
+import memoize from 'fast-memoize'
+import Markdown from '../../lib/markdown'
+import moment from 'moment'
 import yaml from 'yaml'
-
-import { getPost } from '../../lib/api';
 
 // Find YAML FrontMatter preceeding a markdown document
 const FRONT_MATTER_REG = /^\s*\-\-\-\n\s*([\s\S]*?)\s*\n\-\-\-\n/i
@@ -22,13 +21,13 @@ const getContent = (path) => {
 const parseContent = (text) => {
   let [,frontMatter] = text.match(FRONT_MATTER_REG) || [],
   	meta = frontMatter && yaml.eval('---\n'+frontMatter.replace(/^/gm,'  ')+'\n') || {},
-  	content = text.replace(FRONT_MATTER_REG, '');
+  	content = text.replace(FRONT_MATTER_REG, '')
 
   if (!meta.title) {
-		let [,title] = content.match(TITLE_REG) || [];
+		let [,title] = content.match(TITLE_REG) || []
 		if (title) {
-			content = content.replace(TITLE_REG, '');
-			meta.title = title;
+			content = content.replace(TITLE_REG, '')
+			meta.title = title
 		}
 	}
   return {
@@ -45,31 +44,25 @@ export default class Post extends Component {
     meta: ''
   }
 
-  fetchContent = (url) => {
-      return fetch(url)
+  fetchContent = (post) => {
+      return fetch(`//rawgit.com/talvasconcelos/dyor-posts/master/${post}.md`)
   			.then(r => r.text())
   			.then(r => parseContent(r))
   			.then(r => this.setState(r))
 	}
 
-  componentDidMount() {
-    console.log('did mount')
-    this.fetchContent(this.props.active)
-  }
-
   componentWillReceiveProps(nextProps) {
-    console.log('will receive', nextProps)
-    this.fetchContent(nextProps.active)
+    //console.log('will receive', nextProps)
+    memoize(this.fetchContent(nextProps.post))
   }
 
   render({...props}, {content, meta, ...state}) {
     return (
-			<div>
-        <h1>margin</h1>
-        <pre>{JSON.stringify({props}, 0, '  ')}</pre>
+			<div class='container'>
 				{content &&
           <div>
-            {/* <pre>{JSON.stringify({content}, 0, '  ')}</pre> */}
+						<h2>{meta.title}</h2>
+						<hr/>
             <Markdown markdown={content} {...props} />
           </div>
         }

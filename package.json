@@ -18,13 +18,15 @@
   },
   "devDependencies": {
     "classnames": "^2.2.5",
-    "eslint": "^4.6.1",
+    "eslint": "^4.7.2",
     "eslint-config-synacor": "^1.1.1",
+    "eslint-plugin-react": "^7.3.0",
     "if-env": "^1.0.0",
-    "preact-cli": "^1.4.1"
+    "preact-cli": "^1.4.1",
+    "styled-components": "^2.1.2",
+    "styled-media-query": "^2.0.1"
   },
   "dependencies": {
-    "axios": "^0.16.2",
     "fast-memoize": "^2.2.8",
     "marked": "^0.3.6",
     "moment": "^2.18.1",

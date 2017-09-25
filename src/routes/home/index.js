@@ -1,6 +1,6 @@
-import { h, Component } from 'preact';
-import cx from 'classnames';
-import style from './style';
+import { h, Component } from 'preact'
+import cx from 'classnames'
+import style from './style'
 
 import Hero from '../../components/hero'
 import Feature from '../../components/feature'
@@ -24,6 +24,6 @@ export default class Home extends Component {
 					</div>
 				</section>
 			</main>
-		);
+		)
 	}
 }
