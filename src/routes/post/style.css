@@ -1,0 +1,30 @@
+.post {
+
+}
+
+.goBack {
+  margin: 2em 0;
+}
+
+.goBack span {
+  margin-right: 0.5em;
+}
+
+.goBack a {
+  text-decoration: none;
+  font-size: 1.168em;
+  font-weight: 300;
+  padding: 0.5em;
+}
+
+.goBack hr {
+  margin: 1em 0;
+}
+
+.articleImg {
+  height: 128px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(1em 2em 3em rgba(0, 0, 0, 0.3));
+}

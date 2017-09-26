@@ -38,6 +38,7 @@ export default class Blog extends Component {
 						title={post.slug.replace(/\-/g, ' ')}
 						date={post.date}>
 						<Link href={`/blog/${post.filename}`} onClick={() => this.updateActive(post.filename)}>More</Link>
+						<hr/>
 					</PostCard>
 				)}
 			</section>

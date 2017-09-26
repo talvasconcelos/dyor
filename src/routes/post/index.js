@@ -4,6 +4,7 @@ import memoize from 'fast-memoize'
 import Markdown from '../../lib/markdown'
 import moment from 'moment'
 import yaml from 'yaml'
+import style from './style'
 
 // Find YAML FrontMatter preceeding a markdown document
 const FRONT_MATTER_REG = /^\s*\-\-\-\n\s*([\s\S]*?)\s*\n\-\-\-\n/i
@@ -45,10 +46,10 @@ export default class Post extends Component {
   }
 
   fetchContent = (post) => {
-      return fetch(`//rawgit.com/talvasconcelos/dyor-posts/master/${post}.md`)
-  			.then(r => r.text())
-  			.then(r => parseContent(r))
-  			.then(r => this.setState(r))
+    return fetch(`https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/${post}.md`)
+			.then(r => r.text())
+			.then(r => parseContent(r))
+			.then(r => this.setState(r))
 	}
 
   componentWillReceiveProps(nextProps) {
@@ -56,17 +57,38 @@ export default class Post extends Component {
     memoize(this.fetchContent(nextProps.post))
   }
 
+	componentDidMount() {
+		memoize(this.fetchContent(this.props.post))
+	}
+
   render({...props}, {content, meta, ...state}) {
     return (
-			<div class='container article'>
+			<main class='container'>
+				<div class={style.goBack}>
+					<Link href={`/blog/`}><span>&#10092;</span>Back</Link>
+					<Link href="#" style='float: right;'>Edit</Link>
+					<hr/>
+				</div>
 				{content &&
-          <div>
-						<h2>{meta.title}</h2>
-						<hr/>
+					<div class='article'>
+						<header>
+							<h1>{meta.title}</h1>
+							<div class={style.articleImg} style={`background-image: url(https://files.coinmarketcap.com/static/img/coins/128x128/${meta.marketcap_tag}.png)`} url></div>
+						</header>
 						<Markdown markdown={content} {...props} />
-          </div>
-        }
-			</div>
+					</div>
+				}
+			</main>
+			// <div class='container'>
+			// 	<Link href={`/blog/`}>Back</Link>
+			// 	{content &&
+      //     <div>
+			// 			<h2>{meta.title}</h2>
+			// 			<hr/>
+			// 			<Markdown class='article' markdown={content} {...props} />
+      //     </div>
+      //   }
+			// </div>
     )
   }
 }

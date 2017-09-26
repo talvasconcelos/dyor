@@ -23,7 +23,6 @@ export default class App extends Component {
 		return fetch(`//api.github.com/repos/talvasconcelos/dyor-posts/contents/`)
 			.then(r => r.json())
 			.then(r => {
-				r.pop()
 				let out = r.map((post, i) => {
 					return {
 						id: post.sha,
@@ -51,7 +50,7 @@ export default class App extends Component {
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 					<Blog path="/blog/:post?" data={props.appState} up={props.setAppState} />
-					<Post path="/blog/:post" active={props.activePost} />
+					<Post path="/blog/:post" active={props.activePost} data={props.appState}/>
 				</Router>
 				<Footer />
 			</div>
