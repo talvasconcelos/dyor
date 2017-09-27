@@ -54,10 +54,12 @@ export default class Post extends Component {
 
   componentWillReceiveProps(nextProps) {
     //console.log('will receive', nextProps)
+		// this.fetchContent(nextProps.post)
     memoize(this.fetchContent(nextProps.post))
   }
 
 	componentDidMount() {
+		//this.fetchContent(this.props.post)
 		memoize(this.fetchContent(this.props.post))
 	}
 
@@ -78,6 +80,11 @@ export default class Post extends Component {
 						<Markdown markdown={content} {...props} />
 					</div>
 				}
+				<div class={style.goBack}>
+					<Link href={`/blog/`}><span>&#10092;</span>Back</Link>
+					<Link href="#" style='float: right;'>Edit</Link>
+					<hr/>
+				</div>
 			</main>
 			// <div class='container'>
 			// 	<Link href={`/blog/`}>Back</Link>

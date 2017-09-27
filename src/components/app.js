@@ -32,13 +32,14 @@ export default class App extends Component {
 						raw_url: post.download_url
 					}
 				})
-				return out
+				return out.reverse()
 			})
 			.then(r => this.props.setAppState({posts: r}))
 	}
 
 
 	componentDidMount() {
+		// this.fetchPosts()
 		memoize(this.fetchPosts())
 	}
 
