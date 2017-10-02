@@ -46,7 +46,7 @@ export default class Post extends Component {
   }
 
   fetchContent = (post) => {
-    return fetch(`https://raw.githubusercontent.com/talvasconcelos/dyor-posts/master/${post}.md`)
+    return fetch(`//raw.githubusercontent.com/talvasconcelos/dyor-posts/master/posts/${post}.md`)
 			.then(r => r.text())
 			.then(r => parseContent(r))
 			.then(r => this.setState(r))
@@ -67,7 +67,7 @@ export default class Post extends Component {
     return (
 			<main class='container'>
 				<div class={style.goBack}>
-					<Link href={`/blog/`}><span>&#10092;</span>Back</Link>
+					<Link href={`/blog`}><span>&#10092;</span>Back</Link>
 					<Link href="#" style='float: right;'>Edit</Link>
 					<hr/>
 				</div>
@@ -81,7 +81,7 @@ export default class Post extends Component {
 					</div>
 				}
 				<div class={style.goBack}>
-					<Link href={`/blog/`}><span>&#10092;</span>Back</Link>
+					<Link href={`/blog`}><span>&#10092;</span>Back</Link>
 					<Link href="#" style='float: right;'>Edit</Link>
 					<hr/>
 				</div>

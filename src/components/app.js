@@ -20,13 +20,13 @@ export default class App extends Component {
 	}
 
 	fetchPosts = () => {
-		return fetch(`//api.github.com/repos/talvasconcelos/dyor-posts/contents/`)
+		return fetch(`//api.github.com/repos/talvasconcelos/dyor-posts/contents/posts`)
 			.then(r => r.json())
 			.then(r => {
 				let out = r.map((post, i) => {
 					return {
 						id: post.sha,
-						filename: post.path.replace(/\.([a-z]+)$/i, ''),
+						filename: post.name.replace(/\.([a-z]+)$/i, ''),
 						slug: post.name.slice(11).replace(/\.([a-z]+)$/i, ''),
 						date: post.name.slice(0, 10),
 						raw_url: post.download_url
@@ -50,7 +50,7 @@ export default class App extends Component {
 				<Nav />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Blog path="/blog/:post?" data={props.appState} up={props.setAppState} />
+					<Blog path="/blog" data={props.appState} up={props.setAppState} />
 					<Post path="/blog/:post" active={props.activePost} data={props.appState}/>
 				</Router>
 				<Footer />

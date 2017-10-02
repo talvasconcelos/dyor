@@ -13,10 +13,10 @@ export default class Footer extends Component {
 					<h5>Donations:</h5>
 					<p>
 						<span>BTC:&nbsp;</span>
-						<small>1BvBMSEYstWetqTFn5Au4m4GFg7JaNVN2</small>
+						<small>1B5zx4Z3y8ee9LnSSEWDu8shCdCx5wcr1o</small>
 						<br/>
 						<span>ETH:&nbsp;</span>
-						<small>1BvBMSEYstWetqTFn5Au4m4GFg7JaNVN2</small>
+						<small>0x73A32b2AAefAfCC798a479d73aaFF6d027dA5f8C</small>
 					</p>
 					<hr/>
 				</div>

@@ -21,6 +21,7 @@ body {
   min-height: 100%;
   color: var(--font-color);
   font-family: var(--font-family);
+  font-weight: 300;
   font-size: 1em;
   line-height: 1.625em;
   margin: auto;
