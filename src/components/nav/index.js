@@ -1,6 +1,3 @@
-import styled from 'styled-components'
-
-const NavBar = styled.div``
 import { h, Component } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './style';

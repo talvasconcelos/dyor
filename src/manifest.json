@@ -1,6 +1,8 @@
 {
   "name": "DYOR - Do Your Own Research",
   "short_name": "DYOR PWA",
+  "description": "Cryptocurrencies and ICO reviews.",
+  "lang": "en",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

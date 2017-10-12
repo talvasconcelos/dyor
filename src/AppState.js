@@ -7,7 +7,8 @@ class AppState extends Component {
 
 		this.state = {
 			posts: [],
-			activePost: ''
+			activePost: '',
+			shareURL: ''
 		}
 
 		this.setAppState = this.setAppState.bind(this)

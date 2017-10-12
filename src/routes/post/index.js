@@ -46,7 +46,7 @@ export default class Post extends Component {
   }
 
   fetchContent = (post) => {
-    return fetch(`//raw.githubusercontent.com/talvasconcelos/dyor-posts/master/posts/${post}.md`)
+    return fetch(`//rawgit.com/talvasconcelos/dyor-posts/master/posts/${post}.md`)
 			.then(r => r.text())
 			.then(r => parseContent(r))
 			.then(r => this.setState(r))
@@ -68,7 +68,7 @@ export default class Post extends Component {
 			<main class='container'>
 				<div class={style.goBack}>
 					<Link href={`/blog`}><span>&#10092;</span>Back</Link>
-					<Link href="#" style='float: right;'>Edit</Link>
+					<a href={`//github.com/talvasconcelos/dyor-posts/blob/master/posts/${this.props.post}.md`} target='_blank' style='float: right;'>Edit</a>
 					<hr/>
 				</div>
 				{content &&
@@ -82,7 +82,7 @@ export default class Post extends Component {
 				}
 				<div class={style.goBack}>
 					<Link href={`/blog`}><span>&#10092;</span>Back</Link>
-					<Link href="#" style='float: right;'>Edit</Link>
+					<a href={`//github.com/talvasconcelos/dyor-posts/blob/master/posts/${this.props.post}.md`} target='_blank' style='float: right;'>Edit</a>
 					<hr/>
 				</div>
 			</main>

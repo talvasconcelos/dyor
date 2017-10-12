@@ -1,6 +1,7 @@
 /*@import 'normalize.css';*/
 @import 'variables.css';
 @import 'typography.css';
+@import 'social.css';
 
 *,
 *::before,
@@ -49,6 +50,11 @@ section{
   margin: 0 auto;
   width: 90%;
   max-width: 960px;
+}
+
+.social {
+  padding: 4em 0;
+  text-align: center;
 }
 
 #app {

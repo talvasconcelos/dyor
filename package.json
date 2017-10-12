@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "fast-memoize": "^2.2.8",
+    "ganalytics": "^2.0.1",
     "marked": "^0.3.6",
     "moment": "^2.18.1",
     "preact": "^8.2.5",
