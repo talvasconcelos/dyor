@@ -18,22 +18,22 @@
   },
   "devDependencies": {
     "eslint": "^4.7.2",
-    "eslint-config-synacor": "^1.1.1",
-    "eslint-plugin-react": "^7.3.0",
+    "eslint-config-synacor": "^1.1.2",
+    "eslint-plugin-react": "^7.5.1",
     "if-env": "^1.0.0",
-    "preact-cli": "^1.4.1",
+    "preact-cli": "^2.0.0",
     "styled-components": "^2.1.2",
     "styled-media-query": "^2.0.1"
   },
   "dependencies": {
     "fast-memoize": "^2.2.8",
     "ganalytics": "^2.0.1",
-    "marked": "^0.3.6",
-    "moment": "^2.18.1",
-    "preact": "^8.2.5",
+    "marked": "^0.3.9",
+    "moment": "^2.20.1",
+    "preact": "^8.2.7",
     "preact-compat": "^3.17.0",
     "preact-markup": "^1.6.0",
-    "preact-router": "^2.5.7",
+    "preact-router": "^2.6.0",
     "yaml": "^0.3.0"
   }
 }
